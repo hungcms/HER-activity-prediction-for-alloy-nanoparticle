@@ -1,0 +1,88 @@
+SYSTEM           = con1.2_H                      
+
+# -- Startparameter for this Run
+NWRITE           = 2                             ! LPETIM-F    write-flag & timer
+ISTART           = 0                             ! job   0-new  1-contEcut  2-sameBS
+INIWAV           = 1                             ! 0-jellium  1-random
+IWAVPR           = 1                             ! prediction  0-non 1-charg 2-wave 3-comb
+ICHARG           = 2                             ! 0-from WF  1-from CHGCAR  2-from atom  11-12-fixed
+LWAVE            = .FALSE.                       ! determines write WAVECAR file
+LCHARG           = .FALSE.                       ! determines write CHGCAR and CHG
+
+# -- Electronic Relaxation
+ENCUT            = 500                           ! Cut-Off Energy
+NELM             = 100                           ! number of iterations
+EDIFF            = 1E-04                         ! stopping-criterion for ELM
+BMIX             = 3.0                           ! sets the cutoff wave vector for Kerker mixing for the magnetization density
+LDIAG            = T                             ! sub-space diagonalisation
+LREAL            = Auto                          ! real-space projection
+PREC             = Normal                        ! specifies the precision -mode.
+# NBANDS         = 30                            ! number of bands for diagonalization
+# IALGO          = 48                            ! algorithm for the e-relax
+
+# -- Ionic Relaxation
+NSW              = 200                           ! number of steps for IOM
+EDIFFG           = -0.04                         ! Criterion for geom opt (eV/Ang)
+NBLOCK           = 1                             ! inner block
+KBLOCK           = 10                            ! outer block
+IBRION           = 2                             ! ionic relax  0-MD 1-quasi-New 2-CG
+ISIF             = 2                             ! ion&cell relax   0-MD 2-ion&stress 3-ion&cell&stress
+ISYM             = 2                             ! switch symmetry stuff ON (1 or 2) or OFF (0)
+# SYMPREC        = 1e-6                          ! determines to which accuracy the positions in the POSCAR
+LCORR            = T                             ! Harris-correction to forces
+POTIM            = 0.5                           ! time-step for ionic motion (fs)
+SMASS            = 3.0                           ! Nose mass-parameter (am)
+
+# -- DOS related values
+ISMEAR           = 0                             ! Broadening methode -5-tet -1-fermi 0-gaus 1-mp 2-mp2
+SIGMA            = 0.05                          ! Broadening in eV
+LORBIT           = 11                            ! l-decomposed DOS
+# RWIGS          = 1.63  1.00                    ! Wigner-Zeits radius
+# EMIN           = None                          ! Minimum energy for DOS
+# EMAX           = None                          ! Maximum energy for DOS
+# NEDOS          = 1001                          ! Number of DOS points
+# NELECT         = 100                           ! Total number of electrons
+# NUPDOWN        = 2                             ! Difference between UP&DOWN electrons
+
+# -- Spin related values
+ISPIN            = 1                             ! spin polarized-2, non spin polarized-1
+# MAGMOM         = 112*5 1*0.6 209*0.6           ! Specifies the initial magnetic moment for each atom
+
+# -- Parallelizationoption
+LPLANE           = T                             ! Parallelization for PWs
+NCORE            = 4                             ! the number of compute cores that work on an individual orbital
+LSCALU           = F                             ! switches on the parallel LU decomposition
+NSIM             = 4                             ! the number of bands that are optimized simultaneously by the RMM-DIIS algorithm
+
+# -- optB86b-vdW functional requires vdw_kernel.bindat
+# GGA            = MK                            ! None
+# PARAM1         = 0.1234                        ! None
+# PARAM2         = 1.0                           ! None
+# LUSE_VDW       = .TRUE.                        ! None
+# AGGAC          = 0.0                           ! None
+
+# -- TS calculation   default:Nudged Elestic Band method
+# ICHAIN         = 0                             ! Method (0-NEB, 1-Dynamical matrix, 2-Dimer, 3-Lanczos)
+# SPRING         = -5                            ! in eV/Ang*2 (sping constant)
+# IMAGES         = 3                             ! Number of images btw Reactant & Product
+# LCLIMB         = .true.                        ! cNEB  driven up to the saddle point
+# LTANGENTOLD    = .true.                        ! Old central difference tangent
+# LDNEB          = .true.                        ! Modified doubble nudging
+# NEBCELL        = .true.                        ! NEB for variable cell (w/ ISIF-3)
+
+# -- Dipole Correctionoption
+# IDIPOL         = 3                             ! None
+# LDIPOL         = None                          ! None
+
+# -- LDAU+U parameters
+# LMAXMIX        = 4                             ! None
+# LDAU           = .TRUE.                        ! or .FALSE.
+# LDAUTYPE       = 2                             ! 1 or 2 and when 2, U-J
+# LDAUL          = 2 2 2                         ! l-quantum number for which the on-site interaction is added.
+# LDAUU          = 6 0 0                         ! the strength of the effective on-site Coulomb interactions
+# LDAUJ          = 0 0 0                         ! the strength of the effective on-site exchange interactions.
+
+# -- vdW corrections
+# IVDW           = 12                            ! specifiy vdW corrections method
+
+# -- Additional options
