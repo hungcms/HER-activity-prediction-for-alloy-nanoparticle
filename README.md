@@ -6,6 +6,7 @@ Note 1: Training procedure for both nanoparticle's stability and HER activity pr
    After training process for nanoparticle's stability prediction, trained MTP_stability can be used to predict energy for nanoparticle.
    After training process for HER activity prediction, trained MTP_HER can be used to predict energy for H*_nanoparticle and nanoparticle. 
    The procedure to predict energy was described in detail in the MLIP package.
+
 Note 2: The generation of bulk crystal structure was performed based on the cluster approach to statistical mechanics (CASM) package.
    "CASM — A softwCASM — A software package for first-principles based study of multicomponent crystalline solidsare package for first-principles based study 
    of multicomponent crystalline solids". DOI 10.1016/j.commatsci.2022.111897
