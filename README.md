@@ -8,7 +8,7 @@ Note 1: Training procedure for both nanoparticle's stability and HER activity pr
    The procedure to predict energy was described in detail in the MLIP package.
 
 Note 2: The generation of bulk crystal structure was performed based on the cluster approach to statistical mechanics (CASM) package.
-   "CASM — A softwCASM — A software package for first-principles based study of multicomponent crystalline solidsare package for first-principles based study 
+   "CASM — A software package for first-principles based study of multicomponent crystalline solidsare package for first-principles based study 
    of multicomponent crystalline solids". DOI 10.1016/j.commatsci.2022.111897
 
 There are 3 directories: Alloy nanoparticle catalytic activity prediction, Alloy nanoparticle stability prediction and Command. 
